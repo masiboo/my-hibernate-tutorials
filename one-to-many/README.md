@@ -25,3 +25,19 @@ JSON payload :-
         }
     }
 ]
+
+http://localhost:8080/addDept 
+JSON payload :-  
+{  
+    "name": "test dept",  
+    "studentList":[    
+        {
+        "name": "student name",
+        "mobile": 111333  
+        },  
+        {
+        "name": "student name2",
+        "mobile": 111333234  
+        }  
+    ]  
+}  
