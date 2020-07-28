@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DepartmentService {
     public Department findById(long id);
-    public void saveDepartment(Department department);
+    public Department saveDepartment(Department department);
     public List<Department> getDepartments();
     public Department findDepartment(String name) throws NotFoundException;
 }

@@ -8,17 +8,17 @@ JSON payload :-
 After saving department we can save student list by this Post usin Postman
 
 localhost:8080 /saveStudent/hr
-JSON payload :- 
-[
+JSON payload :-      
+[  
     {
-        "name": "aaa",
-        "mobile": 12345,
-        "department": {
-           
-        }
+        "name": "student name 1",  
+        "mobile": 12345,  
+        "department": {  
+             
+    }
     },
     {
-        "name": "bbb",
+        "name": "student name 1",
         "mobile": 1234500,
         "department": {
             

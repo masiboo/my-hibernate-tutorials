@@ -3,8 +3,10 @@ package com.example.onetomany.service;
 import com.example.onetomany.dao.DepartmentRepository;
 import com.example.onetomany.exception.NotFoundException;
 import com.example.onetomany.model.Department;
+import com.example.onetomany.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,9 +24,11 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    //@Transactional
-    public void saveDepartment(Department department) {
-        departmentRepository.save(department);
+    @Transactional
+    public Department saveDepartment(Department department) {
+        List<Student> students =  department.getStudentList();
+        students.forEach(st -> st.setDepartment(department));
+        return departmentRepository.save(department);
     }
 
     @Override

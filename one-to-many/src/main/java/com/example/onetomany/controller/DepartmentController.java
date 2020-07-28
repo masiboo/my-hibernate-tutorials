@@ -14,9 +14,9 @@ public class DepartmentController {
     DepartmentService departmentService;
 
     @PostMapping("/saveDept")
-    public String saveDepartment(@RequestBody Department department){
-        departmentService.saveDepartment(department);
-        return "Saved successfully...";
+    public Department saveDepartment(@RequestBody Department department){
+        Department savedDepartment = departmentService.saveDepartment(department);
+        return savedDepartment;
     }
 
     @RequestMapping(value = "/departmentList", method = RequestMethod.GET)
@@ -30,7 +30,12 @@ public class DepartmentController {
     Department getDepartmentById(@PathVariable(required = true) long id){
         Department  department = departmentService.findById(id);
         return department;
+    }
 
+    @PostMapping("/addDept")
+    public Department saveOne(@RequestBody Department department){
+        Department savedDepartment = departmentService.saveDepartment(department);
+        return savedDepartment;
     }
 
 }
